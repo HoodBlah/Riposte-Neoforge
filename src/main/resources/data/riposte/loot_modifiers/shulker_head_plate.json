@@ -1,0 +1,9 @@
+{
+  "type": "riposte:add_item_with_chance",
+  "conditions": [],
+  "item": "riposte:shulker_head_plate",
+  "chance": 0.05,
+  "tables": [
+    "minecraft:chests/end_city_treasure"
+  ]
+}

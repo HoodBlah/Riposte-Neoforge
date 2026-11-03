@@ -1,0 +1,96 @@
+plugins {
+	id 'java-library'
+	id 'maven-publish'
+	id 'idea'
+	id 'net.neoforged.moddev' version '2.0.141'
+}
+
+version = mod_version
+group = mod_group_id
+
+base {
+	archivesName = mod_id
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+repositories {
+	mavenLocal()
+	maven { name = 'Curios'; url = 'https://maven.theillusivec4.top/' }
+	maven { name = 'FzzyMaven'; url = 'https://maven.fzzyhmstrs.me/' }
+	maven { name = "KosmX's maven"; url = 'https://maven.kosmx.dev/' }
+	maven { name = 'Kotlin for Forge'; url = 'https://thedarkcolour.github.io/KotlinForForge/' }
+}
+
+neoForge {
+	version = project.neo_version
+
+	runs {
+		client {
+			client()
+		}
+		server {
+			server()
+			programArgument '--nogui'
+		}
+	}
+
+	mods {
+		"${mod_id}" {
+			sourceSet sourceSets.main
+		}
+	}
+}
+
+dependencies {
+	// Curios (replaces Trinkets)
+	compileOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}:api"
+	runtimeOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}"
+
+	// Player Animator (NeoForge build is published as "-forge")
+	implementation "dev.kosmx.player-anim:player-animation-lib-forge:${player_anim_version}"
+
+	// Fzzy Config (needs Kotlin for Forge at runtime)
+	implementation "me.fzzyhmstrs:fzzy_config:${fzzy_config_version}"
+	runtimeOnly "thedarkcolour:kotlinforforge-neoforge:${kff_version}"
+}
+
+tasks.withType(ProcessResources).configureEach {
+	var replaceProperties = [
+		minecraft_version      : minecraft_version,
+		minecraft_version_range: minecraft_version_range,
+		neo_version            : neo_version,
+		neo_version_range      : neo_version_range,
+		loader_version_range   : loader_version_range,
+		mod_id                 : mod_id,
+		mod_name               : mod_name,
+		mod_license            : mod_license,
+		mod_version            : mod_version,
+		mod_authors            : mod_authors,
+		mod_description        : mod_description
+	]
+	inputs.properties replaceProperties
+
+	filesMatching(['META-INF/neoforge.mods.toml']) {
+		expand replaceProperties
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	options.encoding = 'UTF-8'
+	options.release = 21
+}
+
+jar {
+	from("LICENSE") {
+		rename { "${it}_${project.name}" }
+	}
+}
+
+publishing {
+	publications {
+		register('mavenJava', MavenPublication) {
+			from components.java
+		}
+	}
+}

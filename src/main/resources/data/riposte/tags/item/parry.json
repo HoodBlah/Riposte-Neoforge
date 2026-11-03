@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "riposte:iron_guard",
+    "riposte:leather_sock",
+    "riposte:void_guard",
+    "riposte:copper_guard"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "entities": [
+    "player"
+  ],
+  "slots": [
+    "parry",
+    "head",
+    "charm",
+    "back",
+    "ring"
+  ]
+}

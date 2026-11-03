@@ -1,0 +1,13 @@
+{
+  "type": "riposte:add_item_with_chance",
+  "conditions": [],
+  "item": "riposte:iron_guard",
+  "chance": 0.15,
+  "tables": [
+    "minecraft:chests/village/village_weaponsmith",
+    "minecraft:chests/village/village_armorer",
+    "minecraft:chests/village/village_toolsmith",
+    "minecraft:chests/stronghold_corridor",
+    "minecraft:chests/ruined_portal"
+  ]
+}

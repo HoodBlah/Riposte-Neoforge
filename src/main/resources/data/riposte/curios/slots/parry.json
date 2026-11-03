@@ -1,0 +1,7 @@
+{
+  "order": 100,
+  "icon": "riposte:slot/parry",
+  "validators": [
+    "curios:tag"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "riposte:add_item_with_chance",
+  "conditions": [],
+  "item": "riposte:void_guard",
+  "chance": 0.005,
+  "tables": [
+    "minecraft:chests/end_city_treasure"
+  ]
+}

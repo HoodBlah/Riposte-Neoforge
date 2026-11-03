@@ -1,0 +1,9 @@
+{
+  "type": "riposte:add_item_with_chance",
+  "conditions": [],
+  "item": "riposte:neural_link",
+  "chance": 0.08,
+  "tables": [
+    "minecraft:chests/ancient_city"
+  ]
+}

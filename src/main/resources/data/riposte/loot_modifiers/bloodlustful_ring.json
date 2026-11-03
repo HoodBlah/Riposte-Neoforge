@@ -1,0 +1,18 @@
+{
+  "type": "riposte:add_item_with_chance",
+  "conditions": [],
+  "item": "riposte:bloodlustful_ring",
+  "chance": 0.03,
+  "tables": [
+    "minecraft:chests/simple_dungeon",
+    "minecraft:chests/abandoned_mineshaft",
+    "minecraft:chests/desert_pyramid",
+    "minecraft:chests/jungle_temple",
+    "minecraft:chests/buried_treasure",
+    "minecraft:chests/shipwreck_treasure",
+    "minecraft:chests/ancient_city",
+    "minecraft:chests/end_city_treasure",
+    "minecraft:chests/bastion_treasure",
+    "minecraft:chests/stronghold_corridor"
+  ]
+}

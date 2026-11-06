@@ -1,3 +1,5 @@
+A Neoforge port of Riposte by NelA470. For description, check the original here --> https://www.curseforge.com/minecraft/mc-mods/riposte  
+
 # Riposte
 Riposte is a Parry Mod that is based off a video titled “[Essence of PARRY](https://www.youtube.com/watch?v=9NPbOl0LGds)” a knock-off standalone variant made for the Fabric version, from mod [Terramity](https://www.curseforge.com/minecraft/mc-mods/terramity) (owned by [Aurukel](https://www.curseforge.com/members/aurukel/projects)) done under a Comission request. 
 
